@@ -2,6 +2,13 @@
 # This is a Shiny web application to visualize clearance values for a hepatic model. You can run the application by clicking
 # the 'Run App' button above.
 
+# Check if required packages are already installed otherwise install
+if (!require(shiny)) install.packages('shiny')
+if (!require(ggplot2)) install.packages('ggplot2')
+if (!require(ggthemes)) install.packages('ggthemes')
+if (!require(plotly)) install.packages('plotly')
+
+# Load packages
 library(shiny)
 library(ggplot2)
 library(ggthemes)
@@ -79,5 +86,5 @@ server <- function(input, output) {
     })
 }
 
-# Run the application at the end
+# Run the application
 shinyApp(ui = ui, server = server)
